@@ -1,24 +1,28 @@
-# README
+# Repositório com container Docker configurado com Rails 6 e Ruby 2.7.1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Para construir a imagem do container, execute:
 
-Things you may want to cover:
+````
+docker-compose build
+````
 
-* Ruby version
+Esse comando deverá ser executado logo após clonar o repositório em sua máquina. Somente será necessário criar a imagem novamente quando precisar instalar uma nova gem, pois as imagens do Docker possuem acesso somente de leitura.
 
-* System dependencies
 
-* Configuration
+Para iniciar a execução do container, execute o seguinte comando:
 
-* Database creation
+````
+docker-compose up
+````
 
-* Database initialization
+Para executar comandos específicos dentro do container, execute o seguinte comando: 
 
-* How to run the test suite
+````
+docker-compose exec web comando
+````
 
-* Services (job queues, cache servers, search engines, etc.)
+Por exemplo:
 
-* Deployment instructions
-
-* ...
+````
+docker-compose exec web rake routes
+````
